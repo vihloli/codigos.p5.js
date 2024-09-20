@@ -1,0 +1,28 @@
+lavra;
+
+function setup() {
+  createCanvas(400, 400);
+  palavra = palavraAleatoria();
+}
+
+function palavraAleatoria() {
+    let palavras = ["Vitoria", "TOry ", "Vitoria Lolina"];
+  return random(palavras);
+    }
+
+function inicializaCores() {
+  background("black");
+  fill("red");
+  stroke("white");
+  textSize(50);
+  textAlign(CENTER, CENTER);
+   
+}
+
+function draw() {
+  inicializaCores();
+
+  let maximo = width;
+  let minimo = 0;
+  // mouseX, 0, width ==> 0, palavra.length
+  let quantidade = m
