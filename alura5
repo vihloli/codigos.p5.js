@@ -1,0 +1,61 @@
+let campoIdade;
+let campoFantasia;
+let campoAventura;
+
+function setup() {
+  createCanvas(800, 500);
+  createElement("h2", "Recomendador de filmes");
+  createSpan("Sua idade:");
+  campoIdade = createInput("5");
+  campoFantasia = createCheckbox("Gosta de fantasia?");
+  campoAventura = createCheckbox("Gosta de aventura?");
+  campoComédia = createCheckbox("Gosta de Comédia?")
+}
+
+function draw() {
+  background("white");
+  let idade = campoIdade.value();
+  let gostaDeFantasia = campoFantasia.checked();
+  let gostaDeAventura = campoAventura.checked();
+  let gostaDeComédia = campoComédia.checked();
+  let recomendacao = geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura, gostaDeComédia);
+
+  fill(color(70, 0, 115));
+  textAlign(CENTER, CENTER);
+  textSize(50);
+  text(recomendacao, width / 2, height / 2);
+}
+
+function geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura, gostaDeComédia) {
+  if (idade >= 10) {
+    if (idade >= 14) {
+      return "Vingadores";
+      return "Velozes e Furiosos";
+      return "Guardiôes da Galáxia: vol.3";
+    } else {
+      if (idade >= 12) {
+        if(gostaDeFantasia || gostaDeAventura) {
+          return "Homem aranha: no aranhaverso";
+          return ""
+        } else{
+         return "Ladrões de bicicleta";
+        }
+      } else {
+        if (gostaDeFantasia) {
+          return "As aventuras de pi";
+          return "Os Incríveis";
+        } else {
+          return "Depois da chuva";
+          return "Moana";
+        }
+      }
+    }
+  } else {
+    if (gostaDeFantasia) {
+      return "A viagem de chihiro";
+      return ""
+    } else {
+      return "O feitiço do tempo";
+    }
+  }
+}
